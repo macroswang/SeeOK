@@ -1,0 +1,54 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+
+/**********************Core Frameworks******************************/
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import  <QuartzCore/QuartzCore.h>
+
+/******************************** 3rd Party*************************/
+//SDWebImage
+#import  "UIImageView+WebCache.h"
+//log
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+#import "DDFileLogger.h"
+
+//parse
+#import <Parse/Parse.h>
+
+
+
+/************************************Project-specific**********************/
+#import "FancysConfig.h"
+#import "SceneController.h"
+#import "UtilsDefine.h"
+#import "SystemVoice.h"
+#import "NavigationView.h"
+#import "LocalStringConfig.h"
+
+/**********************user defined*********************************/
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;//log Level
+
+//设备标识
+#ifndef IS_IPAD
+#define IS_IPAD   ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+#endif
+#ifndef IS_IPHONE
+#define IS_IPHONE   (!IS_IPAD)
+#endif
+
+#endif
